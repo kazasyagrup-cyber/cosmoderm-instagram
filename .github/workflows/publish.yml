@@ -1,10 +1,10 @@
 # cosmoderm-instagram deposunda .github/workflows/publish.yml olarak durur.
-# Saat başı çalışır; zamanı gelen paylaşımı Instagram'a gönderir, state/posted.json'u depoya geri yazar.
+# 15 dakikada bir çalışır (GitHub saatlik çalışmaları atlayabiliyor, 04.10); zamanı gelen paylaşımı Instagram'a gönderir, state/posted.json'u depoya geri yazar.
 name: Instagram paylaşım
 
 on:
   schedule:
-    - cron: '7 * * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
     inputs:
       dry_run:
