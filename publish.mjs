@@ -46,6 +46,9 @@ async function waitReady(id) {
 async function publish(post) {
 	const url = BASE + encodeURIComponent(post.file);
 	const params = post.kind === 'banner' ? {image_url: url, caption: post.caption} : {media_type: 'REELS', video_url: url, caption: post.caption, share_to_feed: 'true'};
+	// özel kapak: profil ızgarasında boş/karanlık kare yerine logo + başlık + ürün + −20% görünsün (dosya varsa)
+	const cover = post.file.replace(/\.mp4$/, '.cover.jpg');
+	if (post.kind !== 'banner' && fs.existsSync('media/' + cover)) params.cover_url = BASE + encodeURIComponent(cover);
 	const c = await api(`${USER}/media`, params);
 	if (post.kind === 'banner') await sleep(5000);
 	await waitReady(c.id);
