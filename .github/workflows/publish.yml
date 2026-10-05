@@ -23,7 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
+      # ref: main ŞART — yoksa sırada bekleyen tur tetiklendiği andaki ESKİ posted.json ile açılır ve aynı videoyu tekrar paylaşır (05.10 çift paylaşım olayı)
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -39,4 +42,5 @@ jobs:
           git config user.name "cosmoderm-bot"
           git config user.email "actions@users.noreply.github.com"
           git add state/posted.json || true
-          git diff --cached --quiet || (git commit -m "paylaşım durumu $(date -u +%F' '%H:%M)" && git push)
+          git diff --cached --quiet || git commit -m "paylaşım durumu $(date -u +%F' '%H:%M)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
