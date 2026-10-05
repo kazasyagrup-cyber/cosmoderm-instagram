@@ -50,13 +50,13 @@ async function publish(post) {
 		post.kind === 'banner'
 			? {image_url: url, caption: post.caption}
 			: post.kind === 'igstory'
-				? {media_type: 'STORIES', video_url: url}
+				? /\.jpe?g$/i.test(post.file) ? {media_type: 'STORIES', image_url: url} : {media_type: 'STORIES', video_url: url}
 				: {media_type: 'REELS', video_url: url, caption: post.caption, share_to_feed: 'true'};
 	// özel kapak: profil ızgarasında boş/karanlık kare yerine logo + başlık + ürün + −20% görünsün (dosya varsa)
 	const cover = post.file.replace(/\.mp4$/, '.cover.jpg');
 	if (post.kind !== 'banner' && post.kind !== 'igstory' && fs.existsSync('media/' + cover)) params.cover_url = BASE + encodeURIComponent(cover);
 	const c = await api(`${USER}/media`, params);
-	if (post.kind === 'banner') await sleep(5000);
+	if (post.kind === 'banner' || /\.jpe?g$/i.test(post.file)) await sleep(5000);
 	await waitReady(c.id);
 	const p = await api(`${USER}/media_publish`, {creation_id: c.id});
 	return p.id;
