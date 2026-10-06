@@ -203,10 +203,9 @@
   "id": "17999675582816636",
   "at": "2026-10-06T08:04:06.107Z"
  },
- "__err:ts1006-atoderm-ru-v2.mp4": 3,
  "ts1006-atoderm-ru-v2.mp4": {
-  "skipped": "error",
-  "error": "video işlenemedi: ERROR",
-  "at": "2026-10-06T09:28:56.458Z"
+  "id": "18135448033653891",
+  "at": "2026-10-06T09:32:14.946083Z",
+  "not": "elle paylaşıldı (eski URL; -v2 URL Instagram önbelleğinde 404)"
  }
 }
