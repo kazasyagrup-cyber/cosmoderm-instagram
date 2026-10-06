@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: instagram-publish
@@ -46,6 +47,7 @@ jobs:
           WA_ORDER: ${{ vars.WA_ORDER }}
           CALLMEBOT_KEY: ${{ secrets.CALLMEBOT_KEY }}
           NOTIFY_PHONE: ${{ secrets.NOTIFY_PHONE }}
+          GITHUB_TOKEN: ${{ github.token }}
           DRY_RUN: ${{ vars.COMMENTS_LIVE == '1' && '0' || '1' }}
         run: node comments.mjs
       # İstatistik toplama (06.10 Faz 1): gönderiler 2 saatte, Story'ler saatte bir (kendi aralığını state/insights.json'da tutar)

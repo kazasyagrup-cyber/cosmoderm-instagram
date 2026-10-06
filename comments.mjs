@@ -131,8 +131,19 @@ export function composeDm(c, username) {
 async function notifyOwner(text) {
 	const key = process.env.CALLMEBOT_KEY;
 	const phone = process.env.NOTIFY_PHONE;
-	if (!key || !phone) return console.log('BİLDİRİM (WhatsApp ayarı yok):', text);
 	if (DRY) return console.log('DRY bildirim:', text);
+	if (!key || !phone) {
+		// WhatsApp (CallMeBot) ayarlanana kadar: GitHub issue → sahibine e-posta bildirimi
+		const gh = process.env.GITHUB_TOKEN;
+		const repo = process.env.GITHUB_REPOSITORY;
+		if (!gh || !repo) return console.log('BİLDİRİM (kanal yok):', text);
+		const r = await fetch(`https://api.github.com/repos/${repo}/issues`, {
+			method: 'POST',
+			headers: {Authorization: `Bearer ${gh}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json'},
+			body: JSON.stringify({title: 'Instagram: cevap gerekiyor — ' + (text.split(/\n/)[1] || '').slice(0, 70), body: text, assignees: ['kazasyagrup-cyber']}),
+		});
+		return console.log('bildirim (GitHub issue):', r.status);
+	}
 	const u = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phone)}&text=${encodeURIComponent(text.slice(0, 900))}&apikey=${encodeURIComponent(key)}`;
 	const r = await fetch(u);
 	console.log('bildirim gönderildi:', r.status);
