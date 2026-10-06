@@ -43,7 +43,23 @@ async function waitReady(id) {
 	throw new Error('video işleme zaman aşımı');
 }
 
+// kind 'carousel' (06.10 Faz 1): post.slides = ['a-1.jpg', ...] (2–10 adet, 1080×1350), post.file = takip anahtarı (ör. car-xxx)
+async function publishCarousel(post) {
+	const kids = [];
+	for (const f of post.slides) {
+		const isVid = /\.mp4$/i.test(f);
+		const c = await api(`${USER}/media`, isVid ? {media_type: 'VIDEO', video_url: BASE + encodeURIComponent(f), is_carousel_item: 'true'} : {image_url: BASE + encodeURIComponent(f), is_carousel_item: 'true'});
+		if (isVid) await waitReady(c.id);
+		kids.push(c.id);
+	}
+	const parent = await api(`${USER}/media`, {media_type: 'CAROUSEL', children: kids.join(','), caption: post.caption});
+	await sleep(5000);
+	await waitReady(parent.id);
+	return (await api(`${USER}/media_publish`, {creation_id: parent.id})).id;
+}
+
 async function publish(post) {
+	if (post.kind === 'carousel') return publishCarousel(post);
 	const url = BASE + encodeURIComponent(post.file);
 	// kind 'igstory' = Instagram Stories (06.10 günlük düzen: feed'e girmeyen konuşan ürün videoları); açıklama/kapak yok
 	const params =
