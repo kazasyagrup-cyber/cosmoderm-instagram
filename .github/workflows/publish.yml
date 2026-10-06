@@ -36,11 +36,23 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
         run: node publish.mjs
+      # Yorum oto-cevabı (06.10). Depo değişkeni COMMENTS_LIVE=1 olana kadar sadece DENEME (log'a yazar, göndermez).
+      - name: Yorumları cevapla
+        if: always()
+        continue-on-error: true
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          WA_ORDER: ${{ vars.WA_ORDER }}
+          CALLMEBOT_KEY: ${{ secrets.CALLMEBOT_KEY }}
+          NOTIFY_PHONE: ${{ secrets.NOTIFY_PHONE }}
+          DRY_RUN: ${{ vars.COMMENTS_LIVE == '1' && '0' || '1' }}
+        run: node comments.mjs
       - name: Durumu kaydet
         if: always()
         run: |
           git config user.name "cosmoderm-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add state/posted.json || true
+          git add state/posted.json state/comments.json 2>/dev/null || git add state/posted.json || true
           git diff --cached --quiet || git commit -m "paylaşım durumu $(date -u +%F' '%H:%M)"
           for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
