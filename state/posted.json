@@ -198,12 +198,5 @@
  "tbest-sensibio-gel-ru.mp4": {
   "id": "17923676553431956",
   "at": "2026-10-06T05:01:00.460Z"
- },
- "__err:tbest-sensibio-gel-kz.mp4": 3,
- "__err:tbest-sensibio-ar-ru.mp4": 2,
- "tbest-sensibio-gel-kz.mp4": {
-  "skipped": "error",
-  "error": "17841445446953057/media_publish: {\"message\":\"User is performing too many actions\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":9,\"error_subcode\":2207042,\"error_user_title\":\"Media Publish Limit Exceeded\",\"error_user_msg\":\"You reached maximum number of posts that is allowed to be published by C",
-  "at": "2026-10-06T05:06:14.660Z"
  }
 }
