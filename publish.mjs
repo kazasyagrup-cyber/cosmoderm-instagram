@@ -62,11 +62,27 @@ async function publish(post) {
 	return p.id;
 }
 
+// Instagram API 24 saatte en fazla 50 paylaşıma izin veriyor (06.10: quota_total 100 dese de 50'de kesti).
+// Kota doluysa denemeyiz; kota hatası gönderiyi "hata" saymaz (yoksa 3 denemede kalıcı atlanıyordu).
+const QUOTA = 50;
+const isQuota = (e) => /2207042|Publish Limit/i.test(String(e.message));
+let quotaLeft = QUOTA;
+if (!DRY) {
+	try {
+		const q = await api(`${USER}/content_publishing_limit`, {fields: 'quota_usage'}, 'GET');
+		quotaLeft = QUOTA - (q.data?.[0]?.quota_usage ?? 0);
+	} catch (e) {
+		console.error('kota sorgulanamadı:', e.message);
+	}
+}
+
 const now = Date.now();
 const due = schedule.filter((p) => !state[p.file] && Date.parse(p.at) <= now);
 let n = 0;
 let failed = 0;
+if (due.length && quotaLeft <= 0) console.log(`KOTA DOLU (24 saatte ${QUOTA}) — ${due.length} gönderi yer açılınca paylaşılacak`);
 for (const post of due) {
+	if (quotaLeft <= 0) break;
 	const lateH = (now - Date.parse(post.at)) / 3600e3;
 	if (lateH > MAX_LATE_H) {
 		state[post.file] = {skipped: 'late', at: new Date().toISOString()};
@@ -82,8 +98,14 @@ for (const post of due) {
 		}
 		const id = await publish(post);
 		state[post.file] = {id, at: new Date().toISOString()};
+		quotaLeft--;
 		console.log('PAYLAŞILDI:', post.file, id);
 	} catch (e) {
+		if (isQuota(e)) {
+			quotaLeft = 0;
+			console.log('KOTA DOLU — bekletiliyor:', post.file);
+			continue;
+		}
 		failed++;
 		const prev = state[`__err:${post.file}`] || 0;
 		state[`__err:${post.file}`] = prev + 1;
