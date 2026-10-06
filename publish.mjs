@@ -58,7 +58,19 @@ async function publishCarousel(post) {
 	return (await api(`${USER}/media_publish`, {creation_id: parent.id})).id;
 }
 
+// 06.10: GitHub Pages yayını bitmeden Instagram'a URL verilirse 404 alıp o URL'yi önbelleğe alıyor ve sonra hep ERROR dönüyor.
+// Bu yüzden önce dosyaların gerçekten yayında olduğunu kontrol et; değilse bu turu atla (hata sayılmaz).
+class NotReady extends Error {}
+const ensureLive = async (files) => {
+	for (const f of files) {
+		const r = await fetch(BASE + encodeURIComponent(f), {method: 'HEAD'});
+		if (r.status !== 200) throw new NotReady(`henüz yayında değil (${r.status}): ${f}`);
+	}
+};
+
 async function publish(post) {
+	const cov = post.file.replace(/\.mp4$/, '.cover.jpg');
+	await ensureLive(post.kind === 'carousel' ? post.slides : [post.file, ...(post.kind !== 'banner' && post.kind !== 'igstory' && fs.existsSync('media/' + cov) ? [cov] : [])]);
 	if (post.kind === 'carousel') return publishCarousel(post);
 	const url = BASE + encodeURIComponent(post.file);
 	// kind 'igstory' = Instagram Stories (06.10 günlük düzen: feed'e girmeyen konuşan ürün videoları); açıklama/kapak yok
@@ -117,6 +129,10 @@ for (const post of due) {
 		quotaLeft--;
 		console.log('PAYLAŞILDI:', post.file, id);
 	} catch (e) {
+		if (e instanceof NotReady) {
+			console.log('BEKLİYOR —', e.message);
+			continue;
+		}
 		if (isQuota(e)) {
 			quotaLeft = 0;
 			console.log('KOTA DOLU — bekletiliyor:', post.file);
