@@ -117,15 +117,19 @@ export function composeDm(c, username) {
 	if (c.delivery) extra.push(t.delivery);
 	if (c.original) extra.push(t.original);
 	if (c.wholesale) extra.push(t.wholesale);
-	const head = t.hi(username);
-	const tail = [blocks.length ? t.prices : '', t.order, c.topics.length ? t.note : ''].filter(Boolean).join('\n');
+	// 07.10: WhatsApp linki EN ÜSTTE (mesaj sonu kesilince link kayboluyordu — kullanıcı şikâyeti); private reply yorum başına 1 mesaj
+	const head = t.hi(username) + '\n' + t.order;
+	const tail = [blocks.length ? t.prices : '', c.topics.length ? t.note : ''].filter(Boolean).join('\n');
 	const render = () => [head, ...blocks.filter((b) => b.items.length).map((b) => [b.title, ...b.items].filter(Boolean).join(NN)), ...extra, tail].filter(Boolean).join(NN);
-	// iki konu varsa önce dengeli kes: en uzun bloktan bir ürün çıkar
-	while (render().length > 1000 && blocks.some((b) => b.items.length)) {
+	// sınır: 1000 karakter (07.10 996 karakterlik mesaj kabul edildi) → pay bırak 950; iki konu varsa dengeli kes: en uzun bloktan bir ürün çıkar
+	const LIMIT = 950;
+	while (render().length > LIMIT && blocks.some((b) => b.items.length)) {
 		const b = blocks.reduce((a, x) => (x.items.length > a.items.length ? x : a));
 		b.items.pop();
 	}
-	return render().slice(0, 1000);
+	let out = render();
+	if (out.length > LIMIT) out = out.slice(0, LIMIT);
+	return out;
 }
 
 async function notifyOwner(text) {
