@@ -741,7 +741,7 @@
   "kind": "quick",
   "type": "REELS",
   "posted_at": "2026-10-07T08:02:02.137Z",
-  "measured_at": "2026-10-07T11:00:51.565Z",
+  "measured_at": "2026-10-07T12:57:07.623Z",
   "views": 0,
   "reach": 0,
   "likes": 0,
@@ -749,15 +749,15 @@
   "shares": 0,
   "saved": 0,
   "total_interactions": 0,
-  "ig_reels_avg_watch_time": 12640,
-  "ig_reels_video_view_total_time": 12640
+  "ig_reels_avg_watch_time": 7807,
+  "ig_reels_video_view_total_time": 15615
  },
  "17991729693103970": {
   "file": "ts1007-pigmentbio-kz-2.mp4",
   "kind": "talk",
   "type": "REELS",
   "posted_at": "2026-10-07T08:42:30.581Z",
-  "measured_at": "2026-10-07T11:00:51.565Z",
+  "measured_at": "2026-10-07T12:57:07.623Z",
   "views": 2,
   "reach": 1,
   "likes": 0,
@@ -765,8 +765,8 @@
   "shares": 0,
   "saved": 0,
   "total_interactions": 0,
-  "ig_reels_avg_watch_time": 36532,
-  "ig_reels_video_view_total_time": 73064
+  "ig_reels_avg_watch_time": 24725,
+  "ig_reels_video_view_total_time": 74175
  },
  "18562821010076968": {
   "file": "ts1007-hydrabio-ru.mp4",
@@ -788,16 +788,16 @@
   "kind": "quick",
   "type": "REELS",
   "posted_at": "2026-10-07T10:39:02.623Z",
-  "measured_at": "2026-10-07T11:00:51.565Z",
-  "views": 0,
-  "reach": 0,
+  "measured_at": "2026-10-07T12:57:07.623Z",
+  "views": 3,
+  "reach": 1,
   "likes": 0,
   "comments": 0,
   "shares": 0,
   "saved": 0,
   "total_interactions": 0,
-  "ig_reels_avg_watch_time": 0,
-  "ig_reels_video_view_total_time": 0
+  "ig_reels_avg_watch_time": 37281,
+  "ig_reels_video_view_total_time": 74563
  },
  "18168335545475741": {
   "file": "soru-tip-kz.jpg",
@@ -813,5 +813,53 @@
   "navigation": 0,
   "follows": 0,
   "profile_visits": 0
+ },
+ "18032118968912133": {
+  "file": "q-abcderm-change-intensif-ru.mp4",
+  "kind": "quick",
+  "type": "REELS",
+  "posted_at": "2026-10-07T11:37:51.966Z",
+  "measured_at": "2026-10-07T12:57:07.623Z",
+  "views": 1,
+  "reach": 1,
+  "likes": 0,
+  "comments": 0,
+  "shares": 0,
+  "saved": 0,
+  "total_interactions": 0,
+  "ig_reels_avg_watch_time": 29893,
+  "ig_reels_video_view_total_time": 59786
+ },
+ "18451136515121421": {
+  "file": "d01-1-ru-banner-b-bioderma-sebium-gel-moussant-f.jpg",
+  "kind": "banner",
+  "type": "FEED",
+  "posted_at": "2026-10-07T11:52:11.421Z",
+  "measured_at": "2026-10-07T12:57:07.623Z",
+  "views": 1,
+  "reach": 1,
+  "likes": 0,
+  "comments": 0,
+  "shares": 0,
+  "saved": 0,
+  "total_interactions": 0,
+  "profile_visits": 0,
+  "follows": 0
+ },
+ "17991602409060568": {
+  "file": "d01-3-ru-banner-b-esthederm-osmoclean-micellar-water-200ml-f.jpg",
+  "kind": "banner",
+  "type": "FEED",
+  "posted_at": "2026-10-07T12:28:10.833Z",
+  "measured_at": "2026-10-07T12:57:07.623Z",
+  "views": 0,
+  "reach": 0,
+  "likes": 0,
+  "comments": 0,
+  "shares": 0,
+  "saved": 0,
+  "total_interactions": 0,
+  "profile_visits": 0,
+  "follows": 0
  }
 }
