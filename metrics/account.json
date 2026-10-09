@@ -48,19 +48,19 @@
   "measured_at": "2026-10-08T17:22:11.630Z"
  },
  "2026-10-09": {
-  "reach": 141,
-  "views": 326,
-  "accounts_engaged": 3,
-  "total_interactions": 3,
-  "profile_views": 6,
+  "reach": 65,
+  "views": 133,
+  "accounts_engaged": 2,
+  "total_interactions": 2,
+  "profile_views": 1,
   "website_clicks": 0,
-  "likes": 1,
+  "likes": 0,
   "comments": 2,
   "shares": 0,
   "saves": 0,
   "replies": 0,
   "followers": 29,
-  "media_count": 32,
-  "measured_at": "2026-10-09T05:20:30.714Z"
+  "media_count": 33,
+  "measured_at": "2026-10-09T07:22:10.910Z"
  }
 }
