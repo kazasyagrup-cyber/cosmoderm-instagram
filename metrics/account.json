@@ -128,11 +128,11 @@
   "measured_at": "2026-10-13T17:11:17.341Z"
  },
  "2026-10-14": {
-  "reach": 88,
-  "views": 124,
+  "reach": 22,
+  "views": 42,
   "accounts_engaged": 0,
   "total_interactions": 0,
-  "profile_views": 3,
+  "profile_views": 0,
   "website_clicks": 0,
   "likes": 0,
   "comments": 0,
@@ -140,7 +140,7 @@
   "saves": 0,
   "replies": 0,
   "followers": 29,
-  "media_count": 55,
-  "measured_at": "2026-10-14T06:05:22.209Z"
+  "media_count": 57,
+  "measured_at": "2026-10-14T11:44:29.832Z"
  }
 }
