@@ -320,8 +320,8 @@
   "measured_at": "2026-10-25T17:35:13.234Z"
  },
  "2026-10-26": {
-  "reach": 88,
-  "views": 111,
+  "reach": 129,
+  "views": 164,
   "accounts_engaged": 0,
   "total_interactions": 0,
   "profile_views": 3,
@@ -332,7 +332,7 @@
   "saves": 0,
   "replies": 0,
   "followers": 30,
-  "media_count": 122,
-  "measured_at": "2026-10-26T11:29:06.239Z"
+  "media_count": 123,
+  "measured_at": "2026-10-26T17:36:20.922Z"
  }
 }
