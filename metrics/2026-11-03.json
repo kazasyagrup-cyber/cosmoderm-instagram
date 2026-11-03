@@ -2692,15 +2692,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T06:38:32.488Z",
-  "measured_at": "2026-11-03T05:53:22.197Z",
-  "views": 3,
-  "reach": 0,
-  "replies": 0,
-  "shares": 0,
-  "total_interactions": 0,
-  "navigation": 0,
-  "follows": 0,
-  "profile_visits": 0
+  "measured_at": "2026-11-03T06:53:21.591Z"
  },
  "18140052235633446": {
   "file": "q-pigmentbio-night-renewer-ru.mp4",
@@ -2739,7 +2731,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T09:38:42.621Z",
-  "measured_at": "2026-11-03T05:53:22.197Z",
+  "measured_at": "2026-11-03T06:53:21.591Z",
   "views": 1,
   "reach": 0,
   "replies": 0,
@@ -2770,7 +2762,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T12:38:32.222Z",
-  "measured_at": "2026-11-03T05:53:22.197Z",
+  "measured_at": "2026-11-03T06:53:21.591Z",
   "views": 1,
   "reach": 0,
   "replies": 0,
@@ -2817,7 +2809,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T15:08:36.537Z",
-  "measured_at": "2026-11-03T05:53:22.197Z",
+  "measured_at": "2026-11-03T06:53:21.591Z",
   "views": 1,
   "reach": 0,
   "replies": 0,
@@ -2832,7 +2824,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T17:08:37.369Z",
-  "measured_at": "2026-11-03T05:53:22.197Z",
+  "measured_at": "2026-11-03T06:53:21.591Z",
   "views": 1,
   "reach": 0,
   "replies": 0,
@@ -2857,5 +2849,20 @@
   "total_interactions": 0,
   "profile_visits": 0,
   "follows": 0
+ },
+ "18018614708748863": {
+  "file": "tx-sebium-lotion-kz.jpg",
+  "kind": "igstory",
+  "type": "STORY",
+  "posted_at": "2026-11-03T06:38:42.297Z",
+  "measured_at": "2026-11-03T06:53:21.591Z",
+  "views": 0,
+  "reach": 0,
+  "replies": 0,
+  "shares": 0,
+  "total_interactions": 0,
+  "navigation": 0,
+  "follows": 0,
+  "profile_visits": 0
  }
 }
