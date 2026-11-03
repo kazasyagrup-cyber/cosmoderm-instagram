@@ -2754,15 +2754,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T12:38:32.222Z",
-  "measured_at": "2026-11-03T11:53:30.928Z",
-  "views": 1,
-  "reach": 0,
-  "replies": 0,
-  "shares": 0,
-  "total_interactions": 0,
-  "navigation": 0,
-  "follows": 0,
-  "profile_visits": 0
+  "measured_at": "2026-11-03T12:53:21.507Z"
  },
  "18037412153663189": {
   "file": "q-cicabio-creme-plus-kz.mp4",
@@ -2801,7 +2793,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T15:08:36.537Z",
-  "measured_at": "2026-11-03T11:53:30.928Z",
+  "measured_at": "2026-11-03T12:53:21.507Z",
   "views": 1,
   "reach": 0,
   "replies": 0,
@@ -2816,7 +2808,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-02T17:08:37.369Z",
-  "measured_at": "2026-11-03T11:53:30.928Z",
+  "measured_at": "2026-11-03T12:53:21.507Z",
   "views": 1,
   "reach": 0,
   "replies": 0,
@@ -2847,7 +2839,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-03T06:38:42.297Z",
-  "measured_at": "2026-11-03T11:53:30.928Z",
+  "measured_at": "2026-11-03T12:53:21.507Z",
   "views": 1,
   "reach": 0,
   "replies": 0,
@@ -2878,7 +2870,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-03T09:38:34.135Z",
-  "measured_at": "2026-11-03T11:53:30.928Z",
+  "measured_at": "2026-11-03T12:53:21.507Z",
   "views": 0,
   "reach": 0,
   "replies": 0,
@@ -2903,5 +2895,20 @@
   "total_interactions": 0,
   "ig_reels_avg_watch_time": 0,
   "ig_reels_video_view_total_time": 0
+ },
+ "17992234740075054": {
+  "file": "tx-sensibio-h2o-eye-kz.jpg",
+  "kind": "igstory",
+  "type": "STORY",
+  "posted_at": "2026-11-03T12:38:43.649Z",
+  "measured_at": "2026-11-03T12:53:21.507Z",
+  "views": 0,
+  "reach": 0,
+  "replies": 0,
+  "shares": 0,
+  "total_interactions": 0,
+  "navigation": 0,
+  "follows": 0,
+  "profile_visits": 0
  }
 }
