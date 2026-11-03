@@ -464,19 +464,19 @@
   "measured_at": "2026-11-03T17:55:58.481Z"
  },
  "2026-11-04": {
-  "reach": 196,
-  "views": 256,
-  "accounts_engaged": 0,
-  "total_interactions": 0,
+  "reach": 204,
+  "views": 270,
+  "accounts_engaged": 1,
+  "total_interactions": 1,
   "profile_views": 2,
   "website_clicks": 0,
   "likes": 0,
   "comments": 0,
   "shares": 0,
-  "saves": 0,
+  "saves": 1,
   "replies": 0,
   "followers": 31,
   "media_count": 177,
-  "measured_at": "2026-11-03T21:54:08.943Z"
+  "measured_at": "2026-11-03T23:53:18.961Z"
  }
 }
