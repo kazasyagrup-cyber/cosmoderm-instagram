@@ -481,10 +481,10 @@
  },
  "2026-11-05": {
   "reach": 202,
-  "views": 322,
+  "views": 330,
   "accounts_engaged": 2,
   "total_interactions": 4,
-  "profile_views": 5,
+  "profile_views": 6,
   "website_clicks": 1,
   "likes": 3,
   "comments": 0,
@@ -493,6 +493,6 @@
   "replies": 0,
   "followers": 31,
   "media_count": 179,
-  "measured_at": "2026-11-05T01:53:37.569Z"
+  "measured_at": "2026-11-05T03:53:20.930Z"
  }
 }
