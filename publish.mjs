@@ -32,6 +32,19 @@ const api = async (path, params = {}, method = 'POST') => {
 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// 05.11: Instagram açıklama sınırı 2200 karakter (kod noktası sayar; JS .length emoji'lerde farklı sayar).
+// Aşarsa gönderi 3 denemede kalıcı "hata" ile atlanıyordu → sondaki hashtag'leri tek tek atıp sığdır, yine olmazsa kes.
+const IG_MAX = 2190; // 10 karakter pay
+const len = (s) => [...s].length;
+const fitCaption = (c) => {
+	if (!c || len(c) <= IG_MAX) return c;
+	let s = c;
+	while (len(s) > IG_MAX && /\s#[^\s#]+\s*$/.test(s)) s = s.replace(/\s*#[^\s#]+\s*$/, '');
+	if (len(s) > IG_MAX) s = [...s].slice(0, IG_MAX - 1).join('') + '…';
+	console.log(`AÇIKLAMA KISALTILDI: ${len(c)} → ${len(s)}`);
+	return s;
+};
+
 async function waitReady(id) {
 	// video işlenene kadar bekle (en fazla ~6 dk)
 	for (let i = 0; i < 36; i++) {
@@ -52,7 +65,7 @@ async function publishCarousel(post) {
 		if (isVid) await waitReady(c.id);
 		kids.push(c.id);
 	}
-	const parent = await api(`${USER}/media`, {media_type: 'CAROUSEL', children: kids.join(','), caption: post.caption});
+	const parent = await api(`${USER}/media`, {media_type: 'CAROUSEL', children: kids.join(','), caption: fitCaption(post.caption)});
 	await sleep(5000);
 	await waitReady(parent.id);
 	return (await api(`${USER}/media_publish`, {creation_id: parent.id})).id;
@@ -76,10 +89,10 @@ async function publish(post) {
 	// kind 'igstory' = Instagram Stories (06.10 günlük düzen: feed'e girmeyen konuşan ürün videoları); açıklama/kapak yok
 	const params =
 		post.kind === 'banner'
-			? {image_url: url, caption: post.caption}
+			? {image_url: url, caption: fitCaption(post.caption)}
 			: post.kind === 'igstory'
 				? /\.jpe?g$/i.test(post.file) ? {media_type: 'STORIES', image_url: url} : {media_type: 'STORIES', video_url: url}
-				: {media_type: 'REELS', video_url: url, caption: post.caption, share_to_feed: 'true'};
+				: {media_type: 'REELS', video_url: url, caption: fitCaption(post.caption), share_to_feed: 'true'};
 	// özel kapak: profil ızgarasında boş/karanlık kare yerine logo + başlık + ürün + −20% görünsün (dosya varsa)
 	const cover = post.file.replace(/\.mp4$/, '.cover.jpg');
 	if (post.kind !== 'banner' && post.kind !== 'igstory' && fs.existsSync('media/' + cover)) params.cover_url = BASE + encodeURIComponent(cover);
