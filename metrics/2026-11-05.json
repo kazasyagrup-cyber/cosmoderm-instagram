@@ -2836,15 +2836,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-04T06:38:41.117Z",
-  "measured_at": "2026-11-05T05:53:22.154Z",
-  "views": 8,
-  "reach": 6,
-  "replies": 0,
-  "shares": 0,
-  "total_interactions": 0,
-  "navigation": 8,
-  "follows": 0,
-  "profile_visits": 1
+  "measured_at": "2026-11-05T06:53:20.197Z"
  },
  "18645859672039927": {
   "file": "q-sebium-kerato-plus-body-kz.mp4",
@@ -2867,7 +2859,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-04T09:38:33.044Z",
-  "measured_at": "2026-11-05T05:53:22.154Z",
+  "measured_at": "2026-11-05T06:53:20.197Z",
   "views": 5,
   "reach": 5,
   "replies": 0,
@@ -2882,7 +2874,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-04T12:38:31.680Z",
-  "measured_at": "2026-11-05T05:53:22.154Z",
+  "measured_at": "2026-11-05T06:53:20.197Z",
   "views": 6,
   "reach": 5,
   "replies": 0,
@@ -2913,7 +2905,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-04T15:08:38.957Z",
-  "measured_at": "2026-11-05T05:53:22.154Z",
+  "measured_at": "2026-11-05T06:53:20.197Z",
   "views": 5,
   "reach": 0,
   "replies": 0,
@@ -2928,7 +2920,7 @@
   "kind": "igstory",
   "type": "STORY",
   "posted_at": "2026-11-04T17:09:37.399Z",
-  "measured_at": "2026-11-05T05:53:22.154Z",
+  "measured_at": "2026-11-05T06:53:20.197Z",
   "views": 3,
   "reach": 0,
   "replies": 0,
@@ -2953,5 +2945,20 @@
   "total_interactions": 0,
   "profile_visits": 0,
   "follows": 0
+ },
+ "18102666080562079": {
+  "file": "tx-hydrabio-riche-cream-kz.jpg",
+  "kind": "igstory",
+  "type": "STORY",
+  "posted_at": "2026-11-05T06:38:31.584Z",
+  "measured_at": "2026-11-05T06:53:20.197Z",
+  "views": 0,
+  "reach": 0,
+  "replies": 0,
+  "shares": 0,
+  "total_interactions": 0,
+  "navigation": 0,
+  "follows": 0,
+  "profile_visits": 0
  }
 }
