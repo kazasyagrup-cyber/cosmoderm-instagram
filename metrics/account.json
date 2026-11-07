@@ -526,5 +526,21 @@
   "followers": 31,
   "media_count": 188,
   "measured_at": "2026-11-07T17:53:20.227Z"
+ },
+ "2026-11-08": {
+  "reach": 276,
+  "views": 377,
+  "accounts_engaged": 4,
+  "total_interactions": 9,
+  "profile_views": 3,
+  "website_clicks": 0,
+  "likes": 5,
+  "comments": 0,
+  "shares": 1,
+  "saves": 2,
+  "replies": 0,
+  "followers": 31,
+  "media_count": 188,
+  "measured_at": "2026-11-07T19:53:24.266Z"
  }
 }
