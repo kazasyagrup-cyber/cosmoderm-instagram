@@ -673,10 +673,10 @@
  },
  "2026-11-17": {
   "reach": 20,
-  "views": 41,
+  "views": 42,
   "accounts_engaged": 1,
   "total_interactions": 1,
-  "profile_views": 2,
+  "profile_views": 3,
   "website_clicks": 3,
   "likes": 1,
   "comments": 0,
@@ -685,6 +685,6 @@
   "replies": 0,
   "followers": 33,
   "media_count": 211,
-  "measured_at": "2026-11-17T13:53:08.480Z"
+  "measured_at": "2026-11-17T15:53:10.547Z"
  }
 }
