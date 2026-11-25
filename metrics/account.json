@@ -801,18 +801,18 @@
  },
  "2026-11-25": {
   "reach": 16,
-  "views": 34,
+  "views": 35,
   "accounts_engaged": 1,
-  "total_interactions": 7,
-  "profile_views": 0,
+  "total_interactions": 8,
+  "profile_views": 1,
   "website_clicks": 0,
-  "likes": 7,
+  "likes": 8,
   "comments": 0,
   "shares": 0,
   "saves": 0,
   "replies": 0,
   "followers": 34,
   "media_count": 227,
-  "measured_at": "2026-11-25T15:53:14.744Z"
+  "measured_at": "2026-11-25T17:53:11.866Z"
  }
 }
